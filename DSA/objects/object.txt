@@ -1,0 +1,13 @@
+Access a Value Stored in an Object
+----------------------------------
+
+1. Dot Notation eg address.street;
+
+2. Bracket Notation eg address["street"];
+
+JavaScript's Object Methods
+----------------------------
+
+1. Object.keys() - gets a list of top level keys of the object instance
+
+2. Object.values() -gets a list of top level values of the object instance

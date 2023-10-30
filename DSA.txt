@@ -1,0 +1,14 @@
+Scalar data types - can be put on a scale, eg strings and numbers
+Collection data types - Hold multiple pieces of data. Its an abstraction hence can't be put on a scale, eg arrays.
+
+Array - A collection that holds multiple pieces of data under a single name
+Array Element/Memmber - The individual pieces of data in an array.
+Array Index - Number that identifies each element in an array.
+Iterable - easy to loop over
+Arrays are mutable
+
+Object - A collection data type that holds multiple pieces of data.
+Object Key - Used to read/update members of an object.
+Object Value - Value that an object key points to.
+Iterable - limited
+Objects are mutable

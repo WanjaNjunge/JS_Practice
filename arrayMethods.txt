@@ -1,0 +1,62 @@
+Destructive - mutates the array
+
+Add Elements to an Array
+------------------------
+.PUSH(), .UNSHIFT()
+--> Take one or more arguments
+--> Return length of modified array
+
+.push() - adds elements to the end
+.unshift() -adds to the beginning
+
+Nondestructive - does not mutate the array
+Includes: SPREAD OPERATOR ...
+--> allows creating a copy of an existing array into a new array
+
+Remove Elements from an Array
+-----------------------------
+.POP(), .SHIFT()
+--> Destructive methods
+--> Do not take any arguments
+--> Remove a single elements
+--> Return removed element 
+
+.pop() - removes last element
+.shift() - removes first element
+
+Nondestructive methods
+.SLICE
+--> with no arguments:  -it returns a copy of original
+                        -creates a shallow copy like spread operator
+
+--> with 1 argument: -slice will run from index specified by argument to end of array
+
+--> with 2 arguments: - the first is the index where the slice begins, the second is the index before which it should end.(ends on the index before)
+
+--> last element is refenced by .slice(-1)
+
+.SPLICE() - Destructive
+         - Removes, adds or replaces elements
+         - last element is refenced by .splice(-1)
+
+Removing:
+---> with 1 argument:- will run from index specified by argument to end of array
+        
+---> with 2 arguments:- array.splice(start, deleteCount);
+                     - first is the start index, second is number of elements to be removed
+
+Replacing: 
+---> requires 3+ arguments
+---> array.splice(start, deleteCount, item1, item2, ...)
+---> replaces the deleted chunk
+---> can replace without deleting by passing 0 as the second argument
+
+Bracket Notation to Replace Elements
+------------------------------------
+--> its Destructive
+--> returns the item being replaced with
+
+Slicing and Spreading
+---------------------
+--> allows us to replace elements nondestructively, leaving the original Array unharmed
+

@@ -1,0 +1,66 @@
+Expression: A combination of information, called data, and symbols indicating how to combine data, called operators.
+
+Evaluation is the process of interpreting an expression, according to rules, to produce a return value.
+
+
+Identify Core Operators in JavaScript
++	Addition	
+-	Subtraction	
+*	Multiplication	We use * instead of × because it looks like x-the-letter
+/	Division	We use / instead of ÷ because that's not on a keyboard
+**	Exponentiation	We use ** instead of ^ because ^ means something else in programming languages
+()	Association	Expressions inside of () get evaluated earlier
+
+A variable is a container in which we can store values for later retrieval.
+
+A variable is said to be "mutable." --> means the value that the name "points to" can be changed during the running of the program. 
+
+We can't redeclare a variable that is declared using let, we can still reassign its value
+
+Const - cannot be reassigned
+
+Identify JavaScript's Seven Basic Data Types
+1. Numbers - integers, decimals, doubles, floats, and so on.
+
+2. Strings - consists of a matching pair of 'single quotes', "double quotes", or `backticks` with zero or more characters in between
+
+3. Booleans - can only be one of two possible values: true or false
+
+4. Objects - consists of a list of properties(keys and values), wrapped in curly braces {} and separated by commas.
+
+Arrays -  a list of values enclosed in square brackets
+
+5. Null - represents an intentionally absent object. typeof operator returns "object" when called with null
+
+6. Undefined - Any variable declared but not defined will be undefined until a value is assigned.
+
+7. Symbols - primarily used as an alternative way to add properties to objects.
+
+
+String interpolation ---> process of injecting the value of an expression (often, but not necessarily, the variable lookup expression) into a String
+
+interpolation operator -> ${}
+
+The following values are falsey:
+false
+null
+undefined
+0
+NaN
+An empty string ("", '')
+
+JavaScript includes four equality operators:
+strict equality operator (===)
+strict inequality operator (!==)
+loose equality operator (==)
+loose inequality operator (!=)
+
+The strict equality operator returns true if two values are equal without performing type conversions.
+
+The strict inequality operator returns true if two values are not equal without performing type conversions
+
+The logical NOT operator (!), also called the bang operator, operates on an expression, returning the opposite of the expression's truthiness.
+
+&& operator(returns the last value to be checked) - the return value of the expression will be truthy if the values on either side of the && are both truthy, and falsey otherwise
+
+|| operator - the return value of the expression will be truthy if one or both of the values on either side of the || are truthy, and falsey otherwise

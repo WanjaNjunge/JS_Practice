@@ -11,3 +11,14 @@ JavaScript's Object Methods
 1. Object.keys() - gets a list of top level keys of the object instance
 
 2. Object.values() -gets a list of top level values of the object instance
+
+Modifying Objects 
+-----------------
+Destructive methods - Bracket Notation
+                    - Dot notation
+
+Nondestructive methods - Spread operator
+
+Remove a Property from an Object
+--------------------------------
+Use delete operator

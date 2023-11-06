@@ -9,6 +9,18 @@
 
  for...loop
  ---> Ends when condition is false
- for(initialization/counter; condition; exp(happens at end of loop)) {
+
+ for(initialization/counter; condition; iteration(happens at end of loop)) {
     statement;
  }
+
+ ---> Used when you know how many times you want to loop
+
+ WHILE LOOP
+ ----------
+---> the initialization moves OUTSIDE the body of the loop!
+---> the iteration moves INSIDE the body of the loop!
+
+ while ([condition]) {
+  [loop body]
+}

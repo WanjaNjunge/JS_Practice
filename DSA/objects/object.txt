@@ -10,7 +10,9 @@ JavaScript's Object Methods
 
 1. Object.keys() - gets a list of top level keys of the object instance
 
-2. Object.values() -gets a list of top level values of the object instance
+2. Object.values() - gets a list of top level values of the object instance
+
+3. Object.assign() - copies all enumerableLinks to an external site. properties from one or more source objects to a target object!
 
 Modifying Objects 
 -----------------
@@ -22,3 +24,26 @@ Nondestructive methods - Spread operator
 Remove a Property from an Object
 --------------------------------
 Use delete operator
+
+built-in objects
+----------------
+Number.isInteger() - Checks whether the provided argument is an integer
+
+Number.isFinite() - Checks whether the provided argument is finite
+
+Number.isNaN() - Checks whether the provided argument is NaN
+
+Number.parseInt() - Accepts a string as its first argument and parses it as an integer. The second argument is the base that should be used in parsing (e.g., 2 for binary or 10 for decimal).
+
+Number.parseFloat() - only accepts a single argument, the string that should be parsed into a floating-point number
+
+Math.ceil() rounds the number up
+
+Math.floor() rounds the number down
+
+Math.round() rounds the number either up or down, whichever is nearest
+
+Math.max() / Math.min() - accept a number of arguments and return the lowest and highest constituent, respectively
+
+Math.random() - This method generates a random number between 0 (inclusive) and 1 (exclusive)
+

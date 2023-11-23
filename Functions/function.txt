@@ -1,0 +1,7 @@
+--> A function is an object that contains a sequence of JavaScript statements. We can execute or call it multiple times.
+
+--> Functions can be invoked before or after they are defined
+
+--> Anonymous Function - Has only function keyword and parenthesis
+
+--> When a return is reached in the code, no further code behavior happens.

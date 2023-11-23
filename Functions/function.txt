@@ -1,7 +1,63 @@
 --> A function is an object that contains a sequence of JavaScript statements. We can execute or call it multiple times.
 
---> Functions can be invoked before or after they are defined
-
---> Anonymous Function - Has only function keyword and parenthesis
-
 --> When a return is reached in the code, no further code behavior happens.
+
+Hoisting - Functions can be invoked before or after they are defined. The function must be defined using a function declaration.
+
+Define Function Expression
+--------------------------
+--> Anonymous Function - Has only function keyword and parenthesis.
+
+* One way to tell the JavaScript engine that it's a function expression is to use the grouping operator () to wrap the entire thing
+
+    (function () {
+        console.log("Yet more razzling");
+    });
+
+* We can use it as a callback function. It's being passed as an argument to addEventListener to be executed later.
+
+    const button = document.getElementById("button");
+    button.addEventListener("click", function () {
+    console.log("Yet more razzling");
+    });
+
+* We can also access an anonymous function by declaring a variable and assigning the function as its value.
+
+    const fn = function () {
+        console.log("Yet more razzling");
+    };
+
+* Another way to invoke an anonymous function is by creating what's known as an immediately-invoked function expression (IIFE)
+
+    (function (baseNumber) {
+    return baseNumber + 3;
+    })(2);
+
+Function-Level Scope
+--------------------
+- If a function is defined inside another function, the inner function has access to all the parameters of, as well as any variables defined in, the outer function.
+
+    function outer(greeting, msg = "It's a fine day to learn") {
+    // 2
+    const innerFunction = function (name, lang = "Python") {
+        // 3
+        return `${greeting}, ${name}! ${msg} ${lang}`; // 4
+    };
+    return innerFunction("student", "JavaScript"); // 5
+    }
+
+    outer("Hello"); // 1
+    //=> "Hello, student! It's a fine day to learn JavaScript"
+
+Let's break this down:
+
+1. We call outer, passing "Hello" as an argument.
+2. The argument ("Hello") is saved in outer's greeting parameter. The other parameter, msg, is set to a default value.
+3. Here's our old friend the function expression. It expects two arguments, to be stored in the parameters name and lang, and lang is assigned the default value of "Python". The function expression itself is saved in the local variable innerFunction.
+4. Inside innerFunction we make use of its parameters, name and lang, as well as the greeting and msg parameters defined in innerFunction's containing (parent) function, outer. innerFunction has access to those variables via the scope chain.
+5. Finally, inside outer, we invoke innerFunction, passing arguments that get stored in innerFunction's name and lang parameters.
+
+Define Closure
+--------------
+
+- "encloses" the function-level scope of its parent

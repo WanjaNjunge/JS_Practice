@@ -1,0 +1,10 @@
+- Defined with =>
+- Not hoisted
+- Doesn't always need {}
+- Single parameters don't require ()
+- Implicit return
+- Lexical this
+
+    const foo = parameter => parameter
+
+- Arrow functions are often used in JavaScript's iterator methods.

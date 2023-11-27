@@ -1,0 +1,2 @@
+- Functions in JavaScript are first-class objects.
+- They can be treated like any other object: they can be assigned to a variable, passed as values to other functions, returned as the value from another function, etc.

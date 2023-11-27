@@ -1,0 +1,20 @@
+    function iReturnThings (thing) {
+    return thing;
+    }
+
+    iReturnThings(function () { return 4 + 5; });
+    // => ƒ () { return 4 + 5; }
+
+-> we can invoke it and return the function's result:
+
+    function iInvokeThings (thing) {
+    return thing();
+    }
+
+    iInvokeThings(function () { return 4 + 5; });
+    // => 9
+
+    iInvokeThings(function () { return 'Hello, ' + 'world!'; });
+    // => "Hello, world!"
+
+Callback Functions - a function passed into another function wherein it might be invoked.

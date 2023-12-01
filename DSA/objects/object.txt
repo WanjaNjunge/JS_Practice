@@ -13,6 +13,7 @@ JavaScript's Object Methods
 2. Object.values() - gets a list of top level values of the object instance
 
 3. Object.assign() - copies all enumerableLinks to an external site. properties from one or more source objects to a target object!
+    let obj2 = Object.assign({}, obj)
 
 Modifying Objects 
 -----------------

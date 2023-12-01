@@ -1,0 +1,54 @@
+Scope - What we can access and where we can access it
+
+Lexical scope
+-------------
+--> CAN access variables in OUTER scope.
+--> CAN'T access variables in NESTED 
+
+Global scope
+------------
+--> Outermost scope
+--> Accessible in EVERY scope
+
+Functional scope
+----------------
+--> Accessible WITHIN a FUNCTION
+--> Specific to a single function
+--> Can't be accessed by anything in outer scopes
+
+Block Scope
+-----------
+--> Accessible WITHIN a Block
+--> Specific Block
+--> Can't be accessed by anything in outer scopes.
+
+- Variables created without a const, let, or var keyword are always globally-scoped
+
+scope chain - the way functions can look up variables declared in outer scopes
+
+-> Top Tip: What matters for the scope chain is where the function is declared — not where it is invoked.
+
+-> NOTE: The scope chain only goes in one direction. An outer scope does not have access to things declared in an inner scope.
+
+
+The JavaScript engine
+---------------------
+1. Compilation phase
+
+--> The engine steps through our code line-by-line:
+    1.When it reaches a variable declaration, the engine allocates memory and sets up a reference to the variable's identifier, e.g., myVar.
+
+    2. When the engine encounters a function declaration, it does three things:
+
+    * Allocates memory and sets up a reference to the function's identifier, e.g., myFunc.
+    * Creates a new execution context with a new scope.
+    * Adds a reference to the parent scope (the outer environment) to the scope chain, making variables and functions declared in the outer environment available in the new function's scope.
+
+2. Execution phase
+
+--> The JavaScript engine again steps through our code line-by-line, but this time it actually runs our code, assigning values to variables and invoking functions.
+
+
+***It is important to understand that objects (including arrays and functions) assigned to a variable using const are still mutable.
+
+***Using the const declaration only prevents reassignment of the variable identifier.

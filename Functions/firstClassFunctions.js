@@ -106,4 +106,58 @@ const fareDoubler = createFareMultiplier(2);
 const fareTripler = createFareMultiplier(3);
 
 
+let books = [
+  {
+    title: 'Eloquent Javascript',
+    price: 16.50,
+   inventory: 3
+  },
+  {
+    title: 'Javascript: The Good Parts',
+    price: 10.50,
+    inventory: 8
+  },
+  {
+    title: 'Learn Javascript VISUALLY',
+    price: 22.00,
+    inventory: 15
+  },
+  {
+    title: 'You don\'t know JS',
+    price: 60.00,
+    inventory: 1
+  },
+  {
+    title: 'Javascript: The Difinitive Guide',
+    price: 13.95,
+    inventory: 21
+  }
+]
+
+function printReport(foo) {
+  console.log(foo(books));
+}
+
+function totalInventory(array) {
+  total = 0
+  for (let item of array) {
+    total += item.inventory
+  }
+  return `Total Inventory: ${total} items`;
+}
+
+
+function restock(array){
+ restockList = [];
+ for (let item of array) {
+  if (item.inventory < 5) {
+    restockList.push(item.title)
+  }
+ }
+ return `Items to be restocked: ${restockList.join(', ')}`
+}
+
+
+printReport(totalInventory);
+printReport(restock);
 

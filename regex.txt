@@ -1,0 +1,44 @@
+--> Regular expressions are used in programming languages to match parts of strings. You create patterns to help you do that matching.
+
+--> One way to test a regex is using the .test() method. The .test() method takes the regex, applies it to a string (which is placed inside the parentheses), and returns true or false if your pattern finds something or not.
+
+    let testStr = "freeCodeCamp";
+    let testRegex = /Code/;
+    testRegex.test(testStr);
+
+--> You can match both cases using what is called a flag. There are other flags but here you'll focus on the flag that ignores case - the i flag. 
+
+    /ignorecase/i. This regex can match the strings ignorecase, igNoreCase, and IgnoreCase
+
+--> You can search for multiple patterns using the alternation or OR operator: |
+
+    /yes|no|maybe/
+
+--> You can also extract the actual matches you found with the .match() method.
+
+    "Hello, World!".match(/Hello/);
+    let ourStr = "Regular expressions";
+    let ourRegex = /expressions/;
+    ourStr.match(ourRegex);
+
+- Here the first match would return ["Hello"] and the second would return ["expressions"].
+
+- Note that the .match syntax is the "opposite" of the .test method you have been using thus far:
+
+    'string'.match(/regex/);
+    /regex/.test('string');
+
+--> To search or extract a pattern more than once, you can use the global search flag: g.
+
+    let testStr = "Repeat, Repeat, Repeat";
+    let ourRegex = /Repeat/;
+    testStr.match(ourRegex);
+
+    let repeatRegex = /Repeat/g;
+    testStr.match(repeatRegex);
+
+- And here match returns the value ["Repeat", "Repeat", "Repeat"]
+
+--> The wildcard character . will match any one character.
+
+-  to match hug, huh, hut, and hum, you can use the regex /hu./ to match all four words.

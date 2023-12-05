@@ -54,6 +54,6 @@ let foundItem2 = books.find(firstRestock)
 
 //find first book to be restocked
 
-function firstRestock(book) {
-    return book.inventory < 6
+function firstRestock(item) {
+    return item.inventory < 6
 }

@@ -1,0 +1,47 @@
+
+Finding a single element that meets a condition == indexOf(), find()
+Finding and returning a list of elements that meet a condition == filter()
+Modifying each element and returning the modified array	== map()
+Creating a summary or aggregation of values in an array	== reduce()
+
+Finding Array Elements
+----------------------
+1. Array.prototype.indexOf()
+ -> Called on an array and takes two arguments: the value you are looking for and an optional start position
+
+ -> It compares each element in turn to the value you're looking for using the strict equality operator (===)
+
+ -> Returns the index of the first matching element
+
+ -> If the element isn't contained in the array, it returns -1.
+
+    const cards = ['queen of hearts', 'jack of clubs', 'ten of diamonds', 'ace of spades'];
+
+    cards.indexOf('jack of clubs'); //=> 1
+    cards.indexOf('jack of hearts'); //=> -1
+
+    cards.indexOf('ace of spades', 2); //=> 3
+    cards.indexOf('jack of clubs', 2); //=> -1 
+
+2. Array.prototype.find()
+-> allows you to execute more complex searches by passing it a callback function
+
+-> It will automatically iterate through the array, call the callback on each value, and return the first element in the array that satisfies the condition defined by the function.
+
+-> If no matching element is found, undefined is returned.
+
+-> in each iteration, passes three arguments to the callback:
+    *the current element of the array
+    *the index of the current element
+    *the array itself
+
+    function isOdd(element, index, array) {
+    return (element % 2 === 1);
+    }
+
+    [4, 6, 8, 10].find(isOdd); //=> undefined, not found
+    [4, 5, 8, 10].find(isOdd); //=> 5
+    [4, 5, 7, 8, 10].find(isOdd); //=> 5
+    [4, 7, 5,  8, 10].find(isOdd); //=> 7
+
+-> find() is one of two Array methods that expects the callback function to return either true or false (filter() is the other one).

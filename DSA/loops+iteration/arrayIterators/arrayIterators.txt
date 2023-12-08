@@ -1,11 +1,11 @@
 
-Finding a single element that meets a condition == indexOf(), find()
-Finding and returning a list of elements that meet a condition == filter()
-Modifying each element and returning the modified array	== map()
-Creating a summary or aggregation of values in an array	== reduce()
+- Finding a single element that meets a condition == indexOf(), find()
+- Finding and returning a list of elements that meet a condition == filter()
+- Modifying each element and returning the modified array	== map()
+- Creating a summary or aggregation of values in an array	== reduce()
 
-Finding Array Elements
-----------------------
+Finding A Single Array Element
+------------------------------
 1. Array.prototype.indexOf()
  -> Called on an array and takes two arguments: the value you are looking for and an optional start position
 
@@ -45,3 +45,45 @@ Finding Array Elements
     [4, 7, 5,  8, 10].find(isOdd); //=> 7
 
 -> find() is one of two Array methods that expects the callback function to return either true or false (filter() is the other one).
+
+FILTER
+------
+Pure function - A function that is repeatedly invoked with the same set of arguments and always returns the same result.
+    - Its behaviour if predictable.
+    - Additionally, invoking the function has no external side-effects such as making a network or database call or altering any object(s) passed to it as an argument.
+
+Impure function - the return value is not predictable, and invoking the function might make network or database calls or alter any objects passed in as arguments.
+
+    - This function is impure because the return value is not predictable:
+    function randomMultiplyAndFloor() {
+        return Math.floor(Math.random() * 100);
+        }
+
+        randomMultiplyAndFloor();
+        // => 53
+        randomMultiplyAndFloor();
+        // => 66
+
+    - This one's impure because it alters the passed-in object:
+        const ada = {
+        name: "Ada Lovelace",
+        age: 202,
+        };
+
+        function happyBirthday(person) {
+        console.log(
+            `Happy birthday, ${person.name}! You're ${++person.age} years old!`
+        );
+        }
+
+        happyBirthday(ada);
+        // LOG: Happy birthday, Ada Lovelace! You're 203 years old!
+
+        happyBirthday(ada);
+        // LOG: Happy birthday, Ada Lovelace! You're 204 years old!
+
+        ada;
+        // => {name: "Ada Lovelace", age: 204}
+
+
+

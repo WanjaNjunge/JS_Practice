@@ -96,5 +96,15 @@ Impure function - the return value is not predictable, and invoking the function
 
 -> The startsWith() method of String values determines whether this string begins with the characters of a specified string, returning true or false as appropriate.
 
+MAPPING ARRAYS
+--------------
+-> .map() accepts a callback function, and passes each element in turn to the callback:
+
+    [1, 2, 3].map(function (num) {
+    return num * num;
+    });
+    // => [1, 4, 9]
+
+-> It returns a new array that's the same length as the original array in which the elements have been modified.
 
 

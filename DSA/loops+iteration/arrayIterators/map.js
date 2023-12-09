@@ -68,3 +68,47 @@ function halfPriceFoo(item) {
 const halfPrice = books.map(halfPriceFoo);
 
 
+// Implementing .map() From Scratch
+// Abstracting the iteration
+
+function map(array, callback) {
+  const newArr = [];
+  for (const element of array) {
+    newArr.push(callback(element))
+  }
+
+  return newArr;
+}
+
+map([1, 2, 3], function(num) {
+  //console.log(num * num)
+})
+
+const originalNumbers = [1, 2, 3, 4, 5];
+
+const squaredNumbers = map(originalNumbers, function(num) {
+  return num * num;
+})
+
+// we need to flip each new engineer's account from a normal user to an admin:
+const oldAccounts = [
+  { userID: 15, title: "Developer Apprentice", accessLevel: "user" },
+  { userID: 63, title: "Developer Apprentice", accessLevel: "user" },
+  { userID: 97, title: "Developer Apprentice", accessLevel: "user" },
+  { userID: 12, title: "Developer Apprentice", accessLevel: "user" },
+  { userID: 44, title: "Developer Apprentice", accessLevel: "user" },
+];
+
+
+const newEngineers = map(oldAccounts, function(account) {
+  return Object.assign({}, account, { accessLevel: "admin" })
+})
+
+// we just need a simple array of the new engineers' userIDs
+const userIDs = map(oldAccounts, function(account) {
+  return account.userID
+})
+
+//update our engineer objects to indicate that all the new engineers have been provided a new work laptop.
+
+const equippedEng = oldAccounts.map((eng) => Object.assign({}, eng, { equipment: "Laptop" }))

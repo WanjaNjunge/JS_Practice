@@ -48,6 +48,15 @@ Finding A Single Array Element
 
 FILTER
 ------
+-> Filter method accepts one argument, a callback function that it will invoke with each element in the array. 
+-> For each element passed to the callback, if the callback's return value is true, that element is copied into a new array
+-> After iterating over every element in the collection, .filter() returns the new array.
+
+    [1, 2, 3, 4, 5].filter(function (num) {
+    return num > 3;
+    });
+    // => [4, 5]
+
 Pure function - A function that is repeatedly invoked with the same set of arguments and always returns the same result.
     - Its behaviour if predictable.
     - Additionally, invoking the function has no external side-effects such as making a network or database call or altering any object(s) passed to it as an argument.
@@ -84,6 +93,8 @@ Impure function - the return value is not predictable, and invoking the function
 
         ada;
         // => {name: "Ada Lovelace", age: 204}
+
+-> The startsWith() method of String values determines whether this string begins with the characters of a specified string, returning true or false as appropriate.
 
 
 

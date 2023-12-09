@@ -112,6 +112,30 @@ const users = [
     return item.favoriteColor === "Yellow"
   })
 
+  /*
+rewrite our filterUsingCb() function as a pure function that returns a new array containing the filtered elements:
+*/
+function filterUsingCB(collection, cb) {
+  const newCollection = [];
+
+  for (const item of collection) {
+    if (cb(item)) {
+      newCollection.push(item);
+    }
+  }
+  return newCollection;
+}
+
+const bluePenguinUsers = filterUsingCB(users, function(item) {
+  return (item.favoriteColor === 'Blue' && item.favoriteAnimal === 'Penguin')
+})
+
+const yellowUsers = filterUsingCB(users, function(item){
+  return item.favoriteColor === 'Yellow'
+})
+
+
+
   //Here's a pure take on our randomMultiplyAndFloor() function:
 
 //   function randomMultiplyAndFloor() {
@@ -165,9 +189,45 @@ const adaAge202 = {
 function happyBirthday(person) {
     const newPerson = Object.assign({}, person, { age: person.age + 1 })
 
-    console.log(`Happy birthday ${newPerson.name}! You are ${newPerson.age} years old.`)
+    //console.log(`Happy birthday ${newPerson.name}! You are ${newPerson.age} years old.`)
 
     return newPerson;
 }
 
 const adaAge203 = happyBirthday(adaAge202);
+
+// findMatching- This function takes an array of drivers' names and a string as arguments, and returns the matching list of drivers. The function should be case insensitive.
+const drivers = ['Bobby', 'Sammy', 'Sally', 'Annette', 'Sarah', 'Bobby']
+
+function findMatching(drivers, name) {
+  return drivers.filter((driver) => driver.toLowerCase() === name.toLowerCase())
+}
+
+// fuzzyMatch - This function takes an array of drivers' names and a string as arguments for querying the array, and returns all drivers whose names begin with the provided letters.
+
+function fuzzyMatch(drivers, abbrev) {
+  return drivers.filter((driver) => driver.startsWith(abbrev))
+}
+
+// matchName - This function takes an array of driver objects and a string as arguments. Each driver object has two properties: name and hometown. The function should return each element whose name property matches the provided string argument.
+const driversDetails = [
+  {
+    name: 'Bobby',
+    hometown: 'Pittsburgh' },
+  {
+    name: 'Sammy',
+    hometown: 'New York' } ,
+  {
+    name: 'Sally',
+    hometown: 'Cleveland' },
+  {
+    name: 'Annette',
+    hometown: 'Los Angeles' },
+  {
+    name: 'Bobby',
+    hometown: 'Tampa Bay' }
+];
+
+function matchName(driversDetails, name) {
+  return driversDetails.filter((driver) => driver.name === name)
+}

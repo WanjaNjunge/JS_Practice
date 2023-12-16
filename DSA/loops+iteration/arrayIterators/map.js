@@ -112,3 +112,56 @@ const userIDs = map(oldAccounts, function(account) {
 //update our engineer objects to indicate that all the new engineers have been provided a new work laptop.
 
 const equippedEng = oldAccounts.map((eng) => Object.assign({}, eng, { equipment: "Laptop" }))
+
+
+/**
+ * we have an array of robots. We want to activate all of them. To activate a robot, we need to mark it as such using the isActivated boolean, and also double its number of modes:
+ */
+
+const robots = [
+  { name: "Johnny 5", modes: 5, isActivated: false },
+  { name: "C3PO", modes: 3, isActivated: false },
+  { name: "Sonny", modes: 2.5, isActivated: false },
+  { name: "Baymax", modes: 1.5, isActivated: false },
+];
+
+const activatedRobots = robots.map((robot) => {
+  return Object.assign({}, robot, { modes: robot.modes * 2, isActivated: true })
+})
+
+// Create a new array containing the names of the tutorials with proper title case formatting.
+const tutorials = [
+  "what does the this keyword mean?",
+  "What is the Constructor OO pattern?",
+  "implementing Blockchain Web API",
+  "The Test Driven Development Workflow",
+  "What is NaN and how Can we Check for it",
+  "What is the difference between stopPropagation and preventDefault?",
+  "Immutable State and Pure Functions",
+  "what is the difference between == and ===?",
+  "what is the difference between event capturing and bubbling?",
+  "what is JSONP?",
+];
+/*
+ * Map through array
+ * For every element/sentence, put to lowercase
+ * Then use split method to turn the sentence into an array, each word as an element
+ * loop through the new array of words, uppercase the first character
+ * Concatenate with the other characters using slice method
+ * Put the words together using join method
+ * 
+ */
+
+const capitalized = (str) => {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
+const titleCased = () => {
+  return tutorials.map(tutorial => {
+    const words = tutorial.split(' ')
+    const capitalizedWords = words.map(word => capitalized(word));
+    return capitalizedWords.join(' ')
+  })
+}
+
+console.log(titleCased());

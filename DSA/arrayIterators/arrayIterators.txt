@@ -107,4 +107,14 @@ MAPPING ARRAYS
 
 -> It returns a new array that's the same length as the original array in which the elements have been modified.
 
+ARRAY REDUCE METHOD
+-------------------
+-> With reduce(), we are able to quickly get a single summary value from the elements in an array.
+
+    const doubledAndSummed = [1, 2, 3].reduce(function(accumulator, element){ return element * 2 + accumulator}, 0)
+
+-> If no initial value is supplied, the first element in the array is used as the starting value. 
+-> reduce() then executes the callback function, passing this starting value and the second element of the array as the two arguments, the code inside the callback is never executed for the first element in the array
+-> 
+
 

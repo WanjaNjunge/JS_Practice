@@ -1,0 +1,8 @@
+We can break down the JavaScript part of web programming into three "pillars": 
+    - Recognizing JS events
+    - Manipulating the DOM
+    - Communicating with the server
+
+We can access the DOM through two variables:
+    - window -> points to an object that represents Chrome's information about the browser
+    - document -> As an object, document has properties + methods

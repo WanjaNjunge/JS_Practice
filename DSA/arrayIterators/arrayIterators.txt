@@ -115,6 +115,28 @@ ARRAY REDUCE METHOD
 
 -> If no initial value is supplied, the first element in the array is used as the starting value. 
 -> reduce() then executes the callback function, passing this starting value and the second element of the array as the two arguments, the code inside the callback is never executed for the first element in the array
--> 
 
+forEach: The Unexpressive Iterator
+----------------------------------
+-> The forEach() method executes a provided function once for each array element.
+
+Uses:
+- printing content to the screen
+
+    empCollection.forEach(function(e){
+        console.log("DEBUG: WHAT ARE YOU?!?" + e)
+    })
+
+- if we need to directly change (or "mutate") the elements we're iterating through.
+
+    function addFullNameToEmployees(empCollection){
+    empCollection.forEach(function(e){
+        e.fullName = `${e.firstName} ${e.familyName}`
+    })
+    }
+
+    addFullNameToEmployees([
+    {firstName: "Byron", familyName: "Karbitii"},
+    {firstName: "Luca", familyName: "Tuexedensis"}
+    ])
 

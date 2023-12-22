@@ -6,3 +6,54 @@ We can break down the JavaScript part of web programming into three "pillars":
 We can access the DOM through two variables:
     - window -> points to an object that represents Chrome's information about the browser
     - document -> As an object, document has properties + methods
+    
+Finding a Node
+--------------
+document.getElementById() - This method can only return one element, since CSS ids are expected to be unique.
+
+document.getElementsByClassName() - this method returns an HTMLCollection of all the elements with the given class.
+	- An HTMLCollection is an array-like structure containing a list of elements.
+	- You can iterate over an HTMLCollection with a simple for loop.
+	
+document.getElementsByTagName() - his method returns an HTMLCollection of all the elements with the given tag and can be iterated using a for loop.
+
+querySelector() - takes one argument, a string of one or more CSS-compatible selectors, and returns the first element that matches.
+
+
+querySelectorAll() — it accepts a string containing one or more selectors as its argument, and it searches starting from the object that it's called on (either document or an element).
+	- it returns a NodeList collection of all matching elements.
+	
+Create DOM Elements Programmatically
+-------------------------------------
+->  call document.createElement('tagName'), where tagName is the name of any valid HTML tag
+
+-> To get an element to appear in the DOM, we have to append() it to an existing DOM node.
+
+    const element = document.createElement("div");
+    document.body.append(element);
+
+Add Elements to the DOM via innerHTML
+-------------------------------------
+    const main = document.getElementById("main");
+    main.innerHTML =
+    "<h1>Poodles!</h1><h3>An Essay into the Pom-Pom as Aesthetic Reconfiguration of the Other from a post-Frankfurt School Appropriationist Perspective</h3><p><em>By: Byron Q. Poodle, Esq., BA.</em></p>";
+
+-> First, it's more error-prone, and the errors can be difficult to find.
+
+-> Second, it can negatively impact site performance.
+
+Change Properties on DOM Nodes
+------------------------------
+    const element = document.getElementById("main");
+    element.style.height = "300px";
+    element.style.backgroundColor = "#27647B";
+
+Remove Elements from the DOM
+----------------------------
+1. removeChild()
+    const ul = document.getElementsByTagName("ul")[0];
+    const secondChild = ul.querySelector("li:nth-child(2)");
+    ul.removeChild(secondChild);
+
+2. element.remove()
+    ul.remove();
